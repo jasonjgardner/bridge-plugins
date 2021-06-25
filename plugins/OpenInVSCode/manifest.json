@@ -1,0 +1,11 @@
+{
+	"author": "jasonjgardner",
+	"id": "5c7f482a-5a93-4993-86bf-bc9f38d39b55",
+	"icon": "mdi-microsoft-visual-studio-code",
+	"version": "1.0.0",
+	"name": "Open in VS Code",
+	"link": "https://github.com/jasonjgardner/",
+	"description": "Send files from bridge. to VS Code",
+	"target": "v2",
+	"tags": ["Utility"]
+}
