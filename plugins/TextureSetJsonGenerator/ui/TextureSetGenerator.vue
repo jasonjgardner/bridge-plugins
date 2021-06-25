@@ -71,15 +71,28 @@ export default {
 				return
 			}
 
+			/// 🍝
 			this.blockList = [
 				...new Set(
 					Object.keys(textureData)
-						.map((k) => {
-							const { textures } = textureData[k]
-							return textures || ''
-						})
+						.map((k) =>
+							Array.isArray(textureData[k].textures)
+								? textureData[k].textures
+										.map((txtr) =>
+											`${txtr.path || txtr}`.substring(
+												(txtr.path || txtr)
+													.toString()
+													.lastIndexOf('/') + 1
+											)
+										)
+										.flat()
+								: `${textureData[k].textures}`.substring(
+										textureData[k].textures
+											.toString()
+											.lastIndexOf('/') + 1
+								  )
+						)
 						.flat()
-						.map((v) => v.substring(v.lastIndexOf('/') + 1))
 						.filter((v) => v && `${v}`.length > 0)
 				),
 			]
