@@ -1,0 +1,32 @@
+{
+	"name": "Image Texture Set (NVIDIA Workflow)",
+	"icon": "mdi-expansion-card",
+	"description": "Create a texture set with a base layer, MER map, and normal map or heightmap",
+	"category": "RTX",
+	"targetVersion": [">=", "1.16.200"],
+	"packTypes": ["resourcePack"],
+	"additionalModels": {
+		"PRESET_PATH": "RP/textures/blocks/",
+		"FORMAT_VERSION": "1.16.100",
+		"DEFAULT_COLOR": "#FF00FF00"
+	},
+	"fields": [
+		[
+			"Terrain Texture Name / Texture Set File Name",
+			"IDENTIFIER",
+			{
+				"optional": true
+			}
+		],
+		[
+			"Color, MER and Normal/Heightmap Layers",
+			"LAYERS",
+			{
+				"type": "fileInput",
+				"accept": ["text/json", "image/png"],
+				"multiple": true
+			}
+		]
+	],
+	"createFiles": ["./create.js"]
+}
