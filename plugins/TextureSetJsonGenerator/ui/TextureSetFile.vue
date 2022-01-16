@@ -69,6 +69,7 @@ export default {
 		},
 		loadMer() {
 			const merSrc = this.$refs.mer.image;
+			// TODO: Wait for refs to load before sending to tab controller
 			this.tab.receiveCanvas(this.$refs.metalness, merSrc, this.tab.METALNESS_INDEX)
 			this.tab.receiveCanvas(this.$refs.emissiveness, merSrc, this.tab.EMISSIVENESS_INDEX)
 			this.tab.receiveCanvas(this.$refs.roughness, merSrc, this.tab.ROUGHNESS_INDEX)
