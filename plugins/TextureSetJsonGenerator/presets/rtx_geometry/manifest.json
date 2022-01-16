@@ -1,0 +1,84 @@
+{
+	"name": "Custom Geometry with Texture Set",
+	"icon": "mdi-buffer",
+	"description": "Create a new block with custom geometry and texture set images",
+	"category": "RTX",
+	"targetVersion": [">=", "1.16.200"],
+	"packTypes": ["resourcePack"],
+	"additionalModels": {
+		"PRESET_PATH": "RP/",
+		"FORMAT_VERSION": "1.16.100"
+	},
+	"fields": [
+		[
+			"Block Name",
+			"IDENTIFIER",
+			{
+				"optional": true
+			}
+		],
+		[
+			"Block Model",
+			"BLOCK_MODEL",
+			{
+				"type": "fileInput",
+				"accept": ["text/json"]
+			}
+		],
+		[
+			"Base Layer",
+			"BASE_LAYER",
+			{
+				"type": "fileInput",
+				"accept": ["image/png", ".tga"]
+			}
+		],
+		[
+			"Metalness Emissiveness Roughness Map (Optional)",
+			"MER_LAYER",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		],
+		[
+			"Depth Map (Optional)",
+			"DEPTH_MAP_LAYER",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		],
+		[
+			"Depth map type",
+			"DEPTH_MAP_TYPE",
+			{
+				"type": "selectInput",
+				"default": "normal",
+				"options": [
+					{
+						"text": "Normal Map",
+						"value": "normal"
+					},
+					{
+						"text": "Height Map",
+						"value": "heightmap"
+					}
+				],
+				"optional": true
+			}
+		],
+		[
+			"Carried Texture (Optional)",
+			"CARRIED_TEXTURE",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		]
+	],
+	"createFiles": ["./create.js"]
+}

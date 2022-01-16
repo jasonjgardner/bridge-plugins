@@ -1,0 +1,142 @@
+{
+	"name": "RGB/RGBA Color Texture Set",
+	"icon": "mdi-format-color-fill",
+	"description": "Create a texture set with uniform RGB or RGBA color values",
+	"category": "RTX",
+	"targetVersion": [">=", "1.16.200"],
+	"packTypes": ["resourcePack"],
+	"additionalModels": {
+		"IMAGE_SAVE_PATH": "RP/textures/blocks/",
+		"PRESET_PATH": "RP/textures/blocks/",
+		"FORMAT_VERSION": "1.16.100"
+	},
+	"fields": [
+		["Terrain Texture", "IDENTIFIER"],
+		[
+			"Color Layer Red Value",
+			"COLOR_RED",
+			{
+				"type": "numberInput",
+				"min": 0,
+				"max": 255,
+				"step": 1,
+				"default": 0,
+				"optional": true
+			}
+		],
+		[
+			"Color Layer Green Value",
+			"COLOR_GREEN",
+			{
+				"type": "numberInput",
+				"min": 0,
+				"max": 255,
+				"step": 1,
+				"default": 0,
+				"optional": true
+			}
+		],
+		[
+			"Color Layer Red Value",
+			"COLOR_BLUE",
+			{
+				"type": "numberInput",
+				"min": 0,
+				"max": 255,
+				"step": 1,
+				"default": 0,
+				"optional": true
+			}
+		],
+		[
+			"Color Layer Alpha Value",
+			"COLOR_ALPHA",
+			{
+				"type": "numberInput",
+				"min": 0,
+				"max": 1,
+				"step": 0.01,
+				"default": 1,
+				"optional": true
+			}
+		],
+		[
+			"Metallic Channel Value",
+			"MER_RED",
+			{
+				"type": "numberInput",
+				"min": 0,
+				"max": 255,
+				"step": 1,
+				"optional": true
+			}
+		],
+		[
+			"Emissive Channel Value",
+			"MER_GREEN",
+			{
+				"type": "numberInput",
+				"min": 0,
+				"max": 255,
+				"step": 1,
+				"optional": true
+			}
+		],
+		[
+			"Roughness Channel Value",
+			"MER_BLUE",
+			{
+				"type": "numberInput",
+				"min": 0,
+				"max": 255,
+				"step": 1,
+				"optional": true
+			}
+		],
+		[
+			"Depth map type",
+			"DEPTH_MAP_TYPE",
+			{
+				"type": "selectInput",
+				"default": "normal",
+				"options": [
+					{
+						"text": "Normal Map",
+						"value": "normal"
+					},
+					{
+						"text": "Height Map",
+						"value": "heightmap"
+					},
+					{
+						"text": "Uniform Height Map",
+						"value": "uniform"
+					}
+				],
+				"optional": true
+			}
+		],
+		[
+			"Uniform Depth",
+			"HEIGHT_VALUE",
+			{
+				"type": "numberInput",
+				"min": 0,
+				"max": 100,
+				"step": 1,
+				"optional": true
+			}
+		],
+		[
+			"Depth Map",
+			"DEPTH_MAP_LAYER",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		]
+	],
+
+	"createFiles": ["./process.js"]
+}

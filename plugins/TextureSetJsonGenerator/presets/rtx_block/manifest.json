@@ -1,0 +1,70 @@
+{
+	"name": "Blank Block",
+	"icon": "mdi-cube",
+	"description": "Create a new block and with required texture set files",
+	"category": "RTX",
+	"targetVersion": [">=", "1.16.200"],
+	"packTypes": ["resourcePack"],
+	"additionalModels": {
+		"FORMAT_VERSION": "1.16.100"
+	},
+	"fields": [
+		["Identifier", "IDENTIFIER"],
+		["Display Name", "DISPLAY_NAME"],
+		[
+			"Base Layer",
+			"BASE_LAYER",
+			{
+				"type": "fileInput",
+				"accept": ["image/png", ".tga"]
+			}
+		],
+		[
+			"Metalness Emissiveness Roughness Map (Optional)",
+			"MER_LAYER",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		],
+		[
+			"Depth Map (Optional)",
+			"DEPTH_MAP_LAYER",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		],
+		[
+			"Depth map type",
+			"DEPTH_MAP_TYPE",
+			{
+				"type": "selectInput",
+				"default": "normal",
+				"options": [
+					{
+						"text": "Normal Map",
+						"value": "normal"
+					},
+					{
+						"text": "Height Map",
+						"value": "heightmap"
+					}
+				],
+				"optional": true
+			}
+		],
+		[
+			"Carried Texture (Optional)",
+			"CARRIED_TEXTURE",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		]
+	],
+	"createFiles": ["./process.js"]
+}

@@ -1,0 +1,54 @@
+{
+	"name": "Hex Color Texture Set",
+	"icon": "mdi-pound-box",
+	"description": "Create a texture set with uniform hexadecimal color values",
+	"category": "RTX",
+	"targetVersion": [">=", "1.16.200"],
+	"packTypes": ["resourcePack"],
+	"additionalModels": {
+		"IMAGE_SAVE_PATH": "RP/textures/blocks/",
+		"PRESET_PATH": "RP/textures/blocks/",
+		"FORMAT_VERSION": "1.16.100"
+	},
+	"fields": [
+		["Texture", "IDENTIFIER"],
+		["Terrain Texture or Hex RGB/ARGB", "BASE_LAYER_COLOR"],
+		[
+			"MER Texture or Hex RGB/ARGB",
+			"MER_LAYER_COLOR",
+			{
+				"optional": true
+			}
+		],
+		[
+			"Depth Map",
+			"DEPTH_MAP_LAYER",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		],
+		[
+			"Depth map type",
+			"DEPTH_MAP_TYPE",
+			{
+				"type": "selectInput",
+				"default": "normal",
+				"options": [
+					{
+						"text": "Normal Map",
+						"value": "normal"
+					},
+					{
+						"text": "Height Map",
+						"value": "heightmap"
+					}
+				],
+				"optional": true
+			}
+		]
+	],
+
+	"createFiles": ["./process.js"]
+}
